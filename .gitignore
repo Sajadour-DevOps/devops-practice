@@ -1,0 +1,7 @@
+*.key
+*.log
+*.env
+*.pem
+*.DS_Store
+Thumbs.db
+node_modules/
