@@ -1,1 +1,2 @@
 As newbie I am testing git branch
+Another line is added to see the changes.
