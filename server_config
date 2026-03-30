@@ -1,0 +1,23 @@
+server {
+    listen 80;
+
+    # Static HTML ফাইল — / পাথে
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
+
+    # Python স্ক্রিপ্ট — /api পাথে
+    location /api {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    # Another Python Script on Port 5100
+    location /testapi {
+        proxy_pass http://127.0.0.1:5100;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
